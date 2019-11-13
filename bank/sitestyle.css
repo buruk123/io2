@@ -1,0 +1,95 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.logincreate b, .logincreate {
+    color: red;
+}
+
+.logincreate:hover b {
+    color: magenta;
+}
+
+.container-custom {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.row-custom {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin: 0px;
+}
+
+.row-custom-center {
+    margin: auto;
+}
+
+.btn-custom {
+    background-color: red !important;
+    color: white !important;
+}
+
+.form-custom {
+    padding: 15px;
+    margin: 0px;
+}
+
+.form-text-custom {
+    font-size: 18px;
+    color: red;
+    font-weight: bold;
+}
+
+.carousel-custom {
+
+    width: 500px;
+    height: 400px;
+    margin: auto;
+}
+
+#loading, #results {
+    display: none;
+}
+
+.cardsimages {
+    margin: auto;
+}
+
+.cos {
+color: blue;
+}
+
+.navbarfixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 0;
+}
+
+.menufixer {
+    height: 100px;
+}
+
+.colorize {
+    color: red;
+}
+
+.dropdowned>.dropdown-menu {
+    top: 200%;
+    transition: 0.3s all ease-in-out;
+}
+.dropdowned:hover>.dropdown-menu {
+    display: block;
+    top: 100%;
+}
+
+.dropdowned>.dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+}
+
+.dropdown-toggle::after {
+    content: none;
+}

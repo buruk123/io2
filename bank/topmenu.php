@@ -5,54 +5,66 @@
 
 ?>
 
+<script src="https://kit.fontawesome.com/28fdb5c183.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="sitestyle.css">
+<div class="menufixer"></div>
 <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.php"><img src="resources/images/logo.png" alt="Najlepszy bank!!!"></a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-                    data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
+    <nav class="navbar navbarfixed navbar-right navbar-expand-lg navbar-dark bg-dark" id="header">
+        <div class="container" style="height: 100px;">
+            <a class="navbar-brand" href="index.php"><img src="resources/images/squirrellaptopfixed.png" width="150" height="150" alt="Najlepszy bank!!!"></a>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <div class="p-2 bg-light rounded rounded-pill shadow-sm w-50 col-xl-7">
+                    <div class="input-group">
+                        <div class="input-group-append">
+                            <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+                        </div>
+                        <input type="search" placeholder="Czego szukasz?" aria-describedby="button-addon1" class="form-control border-0 bg-light">
+                        <div class="input-group-append">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-secondary" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Wszystkie kategorie
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="kontaosobiste.php">Konta osobiste</a>
+                        <div class="input-group-append">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+                                        Zaloguj się
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="kredyty.php">Kredyty</a>
+                        <a class="nav-link" href="register.php">Zarejestruj się</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="karty.php">Karty płatnicze</a>
+                        <a class="nav-link" href="#">Twój koszyk</a></i>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="kontakt.php">Kontakt</a>
-                    </li>
-                    <?php if ($isLoggedIn == true && $isAdmin == false): ?>
-                    <li class="nav-item">
-                        <a class="nav-link logincreate" href="user.php"><b><?php echo $_SESSION['imie'].' '. $_SESSION['nazwisko'] ?></b></a>
-                    </li>
-                    <li class="nav-item create">
-                        <a class="nav-link logincreate" href="logout.php"><b>Wyloguj się</b></a>
-                    </li>
-                    <?php elseif ($isLoggedIn == true && $isAdmin == true) :?>
-                    <li class="nav-item">
-                        <a class="nav-link logincreate" href="admin.php"><b><?php echo $_SESSION['imie'].' '. $_SESSION['nazwisko'] ?></b></a>
-                    </li>
-                    <li class="nav-item create">
-                        <a class="nav-link logincreate" href="logout.php"><b>Wyloguj się</b></a>
-                    </li>
-                    <?php else:?>
-                    <li class="nav-item">
-                        <a class="nav-link logincreate" href="login.php"><b>Zaloguj się</b></a>
-                    </li>
-                    <li class="nav-item create">
-                        <a class="nav-link logincreate" href="register.php"><b>Zarejestruj się</b></a>
-                    </li>
-                    <?php endif; ?>
                 </ul>
             </div>
         </div>
     </nav>
 </header>
+
+
 
