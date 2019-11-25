@@ -33,6 +33,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
@@ -78,6 +79,11 @@
       <workItem from="1573038529330" duration="1972000" />
       <workItem from="1573067988701" duration="3011000" />
       <workItem from="1573643492319" duration="437000" />
+      <workItem from="1574098545288" duration="10504000" />
+      <workItem from="1574166019034" duration="959000" />
+      <workItem from="1574187246502" duration="3032000" />
+      <workItem from="1574248205528" duration="4305000" />
+      <workItem from="1574695078311" duration="7377000" />
     </task>
     <servers />
   </component>
