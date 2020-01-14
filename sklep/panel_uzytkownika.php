@@ -31,6 +31,10 @@ $sql = "SELECT * FROM użytkownicy WHERE id = {$_SESSION['id']}";
 $stmt = $db->prepare($sql);
 $stmt->execute();
 $data = $stmt->fetch();
+$sql = "SELECT * FROM użytkownicy WHERE id = {$_SESSION['id']}";
+$stmt = $db->prepare($sql);
+$stmt->execute();
+$dataa = $stmt->fetch();
 ?>
 <div class="container content">
     <div class="row">
@@ -54,119 +58,197 @@ $data = $stmt->fetch();
                     </div>
                     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                         <div class="card-body">
-                            <div class="form-row">
-                                <div class="form-group col-md-2">
-                                    <label for="inputEmail4">Imie</label>
-                                    <input type="text" name="imie" class="form-control" id="inputEmail4"
-                                           value="<?php echo $data['imie'] ?>" required="required" disabled>
-                                </div>
-                                <div class="form-group col-md-3">
-                                    <label for="inputEmail4">Nazwisko</label>
-                                    <input type="text" name="nazwisko" class="form-control" id="inputEmail4"
-                                           value="<?php echo $data['nazwisko'] ?>" required="required" disabled>
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <label for="inputEmail4">Email</label>
-                                    <input type="email" name="email" class="form-control" id="inputEmail4"
-                                           value="<?php echo $data['email'] ?>" required="required" disabled>
-                                </div>
-                                <div class="form-group col-md-3">
-                                    <label for="inputAddress">Numer telefonu</label>
-                                    <input type="number" name="nrtel" class="form-control" id="nrTel" min="100000000"
-                                           max="999999999" value="<?php echo $data['nr_tel'] ?>" required="required"
-                                           disabled>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-3">
-                                    <label for="inputAddress2">Ulica</label>
-                                    <input type="text" name="ulica" class="form-control" id="inputAddress2"
-                                           value="<?php echo $data['ulica'] ?>" required="required" disabled>
-                                </div>
-                                <div class="form-group col-md-2">
-                                    <label for="inputAddress2">Nr domu</label>
-                                    <input type="number" name="nrDomu" class="form-control" id="inputAddress2"
-                                           value="<?php echo $data['nr_domu'] ?>" required="required" disabled>
-                                </div>
-                                <div class="form-group col-md-2">
-                                    <label for="inputAddress2">Nr mieszkania</label>
-                                    <input type="number" name="nrDomu" class="form-control" id="inputAddress2"
-                                           value="<?php echo $data['nr_mieszkania'] ?>" required="required" disabled>
-                                </div>
-                                <div class="form-group col-md-3">
-                                    <label for="inputAddress2">Miasto</label>
-                                    <input type="text" name="miasto" class="form-control" id="inputAddress2"
-                                           value="<?php echo $data['miasto'] ?>" required="required" disabled>
-                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-2">
+                                        <label for="inputEmail4">Imię</label>
+                                        <input type="text" name="imie" class="form-control" id="imie"
+                                               value="<?php echo $data['imie'] ?>" required="required"
+                                            <?php if (isset($_POST['isDisabled'])):
+                                            ?>>
+                                        <?php else: ?>
+                                            disabled="disabled">
+                                        <?php endif ?>
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <label for="inputEmail4">Nazwisko</label>
+                                        <input type="text" name="nazwisko" class="form-control" id="nazwisko"
+                                               value="<?php echo $data['nazwisko'] ?>" required="required"
+                                            <?php if (isset($_POST['isDisabled'])):
+                                            ?>>
+                                        <?php else: ?>
+                                            disabled="disabled">
+                                        <?php endif ?>
 
-
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-4">
-                                    <label for="exampleFormControlSelect1">Województwo</label>
-                                    <select class="form-control" name="wojewodztwo" id="exampleFormControlSelect1"
-                                            required="required" disabled>
-                                        <?php
-                                        switch (strtolower($data['wojewodztwo'])) {
-                                            case 'dolnośląskie':
-                                                echo '<option selected>dolnośląskie</option>';
-                                                break;
-                                            case 'kujawsko-pomorskie':
-                                                echo '<option selected>kujawsko-pomorskie</option>';
-                                                break;
-                                            case 'lubelskie':
-                                                echo '<option selected>lubelskie</option>';
-                                                break;
-                                            case 'lubuskie':
-                                                echo '<option selected>lubuskie</option>';
-                                                break;
-                                            case 'łódzkie':
-                                                echo '<option selected>łódzkie</option>';
-                                                break;
-                                            case 'małopolskie':
-                                                echo '<option selected>małopolskie</option>';
-                                                break;
-                                            case 'mazowieckie':
-                                                echo '<option selected>mazowieckie</option>';
-                                                break;
-                                            case 'opolskie':
-                                                echo '<option selected>opolskie</option>';
-                                                break;
-                                            case 'podkarpackie':
-                                                echo '<option selected>podkarpackie</option>';
-                                                break;
-                                            case 'podlaskie':
-                                                echo '<option selected>podlaskie</option>';
-                                                break;
-                                            case 'pomorskie':
-                                                echo '<option selected>pomorskie</option>';
-                                                break;
-                                            case 'śląskie':
-                                                echo '<option selected>śląskie</option>';
-                                                break;
-                                            case 'świętokrzyskie':
-                                                echo '<option selected>świętokrzyskie</option>';
-                                                break;
-                                            case 'warmińsko-mazurskie':
-                                                echo '<option selected>warmińsko-mazurskie</option>';
-                                                break;
-                                            case 'wielkopolskie':
-                                                echo '<option selected>wielkopolskie</option>';
-                                                break;
-                                            case 'zachodniopomorskie':
-                                                echo '<option selected>zachodniopomorskie</option>';
-                                                break;
-
-                                        }
-                                        ?>
-                                    </select>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="inputEmail4">Email</label>
+                                        <input type="email" name="email" class="form-control" id="email"
+                                               value="<?php echo $data['email'] ?>" required="required"
+                                            <?php if (isset($_POST['isDisabled'])):
+                                            ?>>
+                                        <?php else: ?>
+                                            disabled="disabled">
+                                        <?php endif ?>
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <label for="inputAddress">Numer telefonu</label>
+                                        <input type="number" name="nrtel" class="form-control" id="nrTel"
+                                               min="100000000"
+                                               max="999999999" value="<?php echo $data['nr_tel'] ?>" required="required"
+                                            <?php if (isset($_POST['isDisabled'])):
+                                            ?>>
+                                        <?php else: ?>
+                                            disabled="disabled">
+                                        <?php endif ?>
+                                    </div>
                                 </div>
-                                <div class="form-group col-md-2">
-                                    <label for="inputAddress2">Poczta</label>
-                                    <input type="text" name="kodPocztowy" class="form-control" id="kodPocztowy"
-                                           value="<?php echo $data['kod_pocztowy'] ?>" required="required" disabled>
+                                <div class="form-row">
+                                    <div class="form-group col-md-3">
+                                        <label for="inputAddress2">Ulica</label>
+                                        <input type="text" name="ulica" class="form-control" id="ulica"
+                                               value="<?php echo $data['ulica'] ?>" required="required"
+                                            <?php if(isset($_POST['isDisabled'])):
+                                            ?>>
+                                        <?php else: ?>
+                                            disabled="disabled">
+                                        <?php endif ?>
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <label for="inputAddress2">Nr domu</label>
+                                        <input type="number" name="nrDomu" class="form-control" id="nrDomu"
+                                               value="<?php echo $data['nr_domu'] ?>" required="required"
+                                            <?php if(isset($_POST['isDisabled'])):
+                                            ?>>
+                                        <?php else: ?>
+                                            disabled="disabled">
+                                        <?php endif ?>
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <label for="inputAddress2">Nr mieszkania</label>
+                                        <input type="number" name="nrMieszkania" class="form-control" id="nrMieszkania"
+                                               value="<?php echo $data['nr_mieszkania']?>" required="required"
+                                            <?php if(isset($_POST['isDisabled'])):
+                                            ?>>
+                                        <?php else: ?>
+                                            disabled="disabled">
+                                        <?php endif ?>
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <label for="inputAddress2">Miasto</label>
+                                        <input type="text" name="miasto" class="form-control" id="miasto"
+                                               value="<?php echo $data['miasto'] ?>" required="required"
+                                            <?php if(isset($_POST['isDisabled'])):
+                                            ?>>
+                                        <?php else: ?>
+                                            disabled="disabled">
+                                        <?php endif ?>
+                                    </div>
                                 </div>
-                            </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <label for="exampleFormControlSelect1">Województwo</label>
+                                        <select class="form-control" name="wojewodztwo" id="wojewodztwo"
+                                                required="required"
+                                            <?php if(isset($_POST['isDisabled'])):
+                                            ?>>
+                                            <?php else: ?>
+                                                disabled="disabled">
+                                            <?php endif ?>
+                                            <?php
+                                            switch (strtolower($data['wojewodztwo'])) {
+                                                case 'dolnośląskie':
+                                                    echo '<option selected>dolnośląskie</option>';
+                                                    break;
+                                                case 'kujawsko-pomorskie':
+                                                    echo '<option selected>kujawsko-pomorskie</option>';
+                                                    break;
+                                                case 'lubelskie':
+                                                    echo '<option selected>lubelskie</option>';
+                                                    break;
+                                                case 'lubuskie':
+                                                    echo '<option selected>lubuskie</option>';
+                                                    break;
+                                                case 'łódzkie':
+                                                    echo '<option selected>łódzkie</option>';
+                                                    break;
+                                                case 'małopolskie':
+                                                    echo '<option selected>małopolskie</option>';
+                                                    break;
+                                                case 'mazowieckie':
+                                                    echo '<option selected>mazowieckie</option>';
+                                                    break;
+                                                case 'opolskie':
+                                                    echo '<option selected>opolskie</option>';
+                                                    break;
+                                                case 'podkarpackie':
+                                                    echo '<option selected>podkarpackie</option>';
+                                                    break;
+                                                case 'podlaskie':
+                                                    echo '<option selected>podlaskie</option>';
+                                                    break;
+                                                case 'pomorskie':
+                                                    echo '<option selected>pomorskie</option>';
+                                                    break;
+                                                case 'śląskie':
+                                                    echo '<option selected>śląskie</option>';
+                                                    break;
+                                                case 'świętokrzyskie':
+                                                    echo '<option selected>świętokrzyskie</option>';
+                                                    break;
+                                                case 'warmińsko-mazurskie':
+                                                    echo '<option selected>warmińsko-mazurskie</option>';
+                                                    break;
+                                                case 'wielkopolskie':
+                                                    echo '<option selected>wielkopolskie</option>';
+                                                    break;
+                                                case 'zachodniopomorskie':
+                                                    echo '<option selected>zachodniopomorskie</option>';
+                                                    break;
+
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <label for="inputAddress2">Poczta</label>
+                                        <input type="text" name="kodPocztowy" class="form-control isDisabled"
+                                               id="poczta"
+                                               value="<?php echo $data['kod_pocztowy'] ?>" required="required"
+                                            <?php if(isset($_POST['isDisabled'])):
+                                            ?>>
+                                        <?php else: ?>
+                                            disabled="disabled">
+                                        <?php endif ?>
+                                    </div>
+                                </div>
+                                <?php if(isset($_POST['isDisabled'])):
+                                    ?>
+                            <form action="zmien_dane.php" method="post" id="edytuj"
+                                  enctype="multipart/form-data">
+                                <input type="hidden" name="id" value="<?php echo $_SESSION['id'] ?>">
+                                <input type="hidden" name="imie" id="setImie" value="">
+                                <input type="hidden" name="nazwisko" id="setNazwisko" value="">
+                                <input type="hidden" name="email" id="setEmail" value="">
+                                <input type="hidden" name="nrTel" id="setNrTel" value="">
+                                <input type="hidden" name="ulica" id="setUlica" value="">
+                                <input type="hidden" name="nrDomu" id="setNrDomu" value="">
+                                <input type="hidden" name="nrMieszkania" id="setNrMieszkania" value="">
+                                <input type="hidden" name="miasto" id="setMiasto" value="">
+                                <input type="hidden" name="wojewodztwo" id="setWojewodztwo" value="">
+                                <input type="hidden" name="poczta" id="setPoczta" value="">
+                                <button onclick="setValues()" type="submit" class="btn btn-warning">
+                                    Zmień dane
+                                </button>
+                                <?php else: ?>
+                            <form action="panel_uzytkownika.php" method="post" id="edytuj"
+                                  enctype="multipart/form-data">
+                                <input type="hidden" name="isDisabled">
+                                    <button type="submit" class="btn btn-warning">
+                                        Edytuj
+                                    </button>
+                                <?php endif ?>
+
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -224,7 +306,7 @@ $data = $stmt->fetch();
                                     echo '
                                         <tr>
                                         ';
-                                    if($id == $data3['id']) continue;
+                                    if ($id == $data3['id']) continue;
                                     echo '
                                             <th scope="row">' . $data3['id'] . '</th>
                                             <td>' . $data3['data'] . '</td>
@@ -271,6 +353,34 @@ $data = $stmt->fetch();
     function setEmail() {
         var email = document.getElementById("replyTo").innerText;
         document.getElementById("replyToInputHidden").value = email;
+    }
+</script>
+
+<script>
+    function setValues() {
+        //getValues
+        var imie = document.getElementById("imie").value;
+        var nazwisko = document.getElementById("nazwisko").value;
+        var email = document.getElementById("email").value;
+        var nrTel = document.getElementById("nrTel").value;
+        var ulica = document.getElementById("ulica").value;
+        var nrDomu = document.getElementById("nrDomu").value;
+        var nrMieszkania = document.getElementById("nrMieszkania").value;
+        var miasto = document.getElementById("miasto").value;
+        var wojewodztwo = document.getElementById("wojewodztwo").value;
+        var poczta = document.getElementById("poczta").value;
+
+        //setValues
+        document.getElementById("setImie").value = imie;
+        document.getElementById("setNazwisko").value = nazwisko;
+        document.getElementById("setEmail").value = email;
+        document.getElementById("setNrTel").value = nrTel;
+        document.getElementById("setUlica").value = ulica;
+        document.getElementById("setNrDomu").value = nrDomu;
+        document.getElementById("setNrMieszkania").value = nrMieszkania;
+        document.getElementById("setMiasto").value = miasto;
+        document.getElementById("setWojewodztwo").value = wojewodztwo;
+        document.getElementById("setPoczta").value = poczta;
     }
 </script>
 </body>

@@ -40,6 +40,13 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="sklep: schema" type="ebfa3cd1:MariaImplModel$Schema" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="sklep@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="sklep: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+        <item name="użytkownicy: table" type="dbc44a63:MariaImplModel$Table" />
+      </path>
     </expand>
     <select />
   </component>
@@ -170,6 +177,9 @@
       <workItem from="1576326954081" duration="7346000" />
       <workItem from="1576417466172" duration="17464000" />
       <workItem from="1576439941685" duration="12141000" />
+      <workItem from="1577011073863" duration="4590000" />
+      <workItem from="1577094596919" duration="86000" />
+      <workItem from="1579023041641" duration="4874000" />
     </task>
     <servers />
   </component>

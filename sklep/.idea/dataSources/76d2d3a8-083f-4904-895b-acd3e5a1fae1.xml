@@ -1659,79 +1659,66 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="400" parent="337" name="email">
-      <ColNames>email</ColNames>
-      <Unique>1</Unique>
-      <Type>btree</Type>
-    </index>
-    <index id="401" parent="337" name="id_admina">
-      <ColNames>id_admina</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="402" parent="337" name="PRIMARY">
+    <key id="400" parent="337" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="403" parent="337" name="email">
-      <ColNames>email</ColNames>
-      <UnderlyingIndexName>email</UnderlyingIndexName>
-    </key>
-    <foreign-key id="404" parent="337" name="wiadomosci_ibfk_1">
+    <foreign-key id="401" parent="337" name="wiadomosci_ibfk_1">
       <ColNames>id_admina</ColNames>
       <RefTableName>użytkownicy</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="405" parent="338" name="id">
+    <column id="402" parent="338" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="406" parent="338" name="id_prod">
+    <column id="403" parent="338" name="id_prod">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="407" parent="338" name="id_uzytkownika">
+    <column id="404" parent="338" name="id_uzytkownika">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="408" parent="338" name="data">
+    <column id="405" parent="338" name="data">
       <Position>4</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="409" parent="338" name="rodzaj_dostawy">
+    <column id="406" parent="338" name="rodzaj_dostawy">
       <Position>5</Position>
       <DataType>enum(&apos;KURIER&apos;, &apos;OSOBISTY&apos;)|0e</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="410" parent="338" name="rodzaj_platnosci">
+    <column id="407" parent="338" name="rodzaj_platnosci">
       <Position>6</Position>
       <DataType>enum(&apos;GOTOWKA&apos;, &apos;BLIK&apos;, &apos;KARTA&apos;)|0e</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="411" parent="338" name="id_prod">
+    <index id="408" parent="338" name="id_prod">
       <ColNames>id_prod</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="412" parent="338" name="id_uzytkownika">
+    <index id="409" parent="338" name="id_uzytkownika">
       <ColNames>id_uzytkownika</ColNames>
       <Type>btree</Type>
     </index>
-    <foreign-key id="413" parent="338" name="zamowienia_ibfk_1">
+    <foreign-key id="410" parent="338" name="zamowienia_ibfk_1">
       <ColNames>id_prod</ColNames>
       <RefTableName>produkty</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="414" parent="338" name="zamowienia_ibfk_2">
+    <foreign-key id="411" parent="338" name="zamowienia_ibfk_2">
       <ColNames>id_uzytkownika</ColNames>
       <RefTableName>użytkownicy</RefTableName>
       <RefColNames>id</RefColNames>

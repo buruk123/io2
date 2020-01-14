@@ -72,7 +72,7 @@ require_once "connect.php";
                                             <tr>
                                               <th scope="row">' . $counter . '</th>
                                               <td id="' . $data['id'] . '">' . $data['email'] . '</td>
-                                              <td class="text-wrap">' . $data['tresc'] . '</td>
+                                              <td>' . $data['tresc'] . '</td>
                                               <td>' . $data['data_wyslania'] . '</td>
                                               <input name="email" type="hidden" value=' . $data['email'] . '>
                                               <td><button type="button" onclick="getEmail(' . $data['id'] . ')" class="btn btn-danger" data-toggle="collapse" aria-expanded="true"
